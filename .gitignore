@@ -8,6 +8,7 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+local.settings.json
 
 # Logs and temporary output
 *.log
@@ -21,6 +22,7 @@ dist/
 build/
 bin/
 obj/
+TestResults/
 __pycache__/
 .pytest_cache/
 .venv/

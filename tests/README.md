@@ -1,3 +1,7 @@
-# Test directory
+# Tests
 
-Place automated tests in this directory. Add the corresponding test command to the root README and CI contract when a technology stack is selected.
+Tests cover application contracts without invoking a cloud provider. They use a fake `IAgentRuntime` and
+an in-memory recording journal, so they are deterministic and safe to run in CI.
+
+Live Azure OpenAI/Foundry smoke tests are intentionally not part of this baseline because they require
+an approved environment, identity, deployment, and cost boundary.

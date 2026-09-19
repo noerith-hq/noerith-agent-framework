@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/Noerith.AgentFramework.Api/Noerith.AgentFramework.Api.csproj" />
+  <Project Path="src/Noerith.AgentFramework.Application/Noerith.AgentFramework.Application.csproj" />
+  <Project Path="src/Noerith.AgentFramework.Persistence/Noerith.AgentFramework.Persistence.csproj" />
+  <Project Path="tests/Noerith.AgentFramework.Tests/Noerith.AgentFramework.Tests.csproj" />
+</Solution>
