@@ -29,6 +29,7 @@ required_files=(
   .gitignore
   .github/dependabot.yml
   .github/workflows/ci.yml
+  .github/workflows/codeql.yml
   .github/workflows/release.yml
   ci/verify.sh
   docs/architecture.md
@@ -93,9 +94,13 @@ while IFS= read -r workflow_file; do
 
     if [[ "${line}" =~ ^[[:space:]]*([A-Za-z0-9_-]+):[[:space:]]*write([[:space:]#]|$) ]]; then
       permission="${BASH_REMATCH[1]}"
-      if [[ "${workflow_file}" != '.github/workflows/release.yml' || "${permission}" != 'contents' ]]; then
-        fail "Unexpected write permission in ${workflow_file}: ${permission}"
-      fi
+      case "${workflow_file}:${permission}" in
+        '.github/workflows/release.yml:contents'|'.github/workflows/codeql.yml:security-events')
+          ;;
+        *)
+          fail "Unexpected write permission in ${workflow_file}: ${permission}"
+          ;;
+      esac
     fi
 
     if [[ "${line}" =~ ^[[:space:]]*-?[[:space:]]*uses:[[:space:]]*([^[:space:]#]+) ]]; then
@@ -126,5 +131,19 @@ else
     fail 'Required project placeholders remain after initialization'
   fi
 fi
+
+require_file Noerith.AgentFramework.slnx
+require_file Directory.Build.props
+require_file global.json
+require_file nuget.config
+require_file src/Noerith.AgentFramework.Api/Noerith.AgentFramework.Api.csproj
+require_file src/Noerith.AgentFramework.Application/Noerith.AgentFramework.Application.csproj
+require_file src/Noerith.AgentFramework.Persistence/Noerith.AgentFramework.Persistence.csproj
+require_file tests/Noerith.AgentFramework.Tests/Noerith.AgentFramework.Tests.csproj
+
+dotnet restore Noerith.AgentFramework.slnx
+dotnet format Noerith.AgentFramework.slnx --verify-no-changes --no-restore
+dotnet build Noerith.AgentFramework.slnx --configuration Release --no-restore
+dotnet test Noerith.AgentFramework.slnx --configuration Release --no-build --no-restore
 
 printf 'NOERITH starter checks passed.\n'

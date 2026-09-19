@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../Noerith.AgentFramework.Application/Noerith.AgentFramework.Application.csproj" />
+  </ItemGroup>
+</Project>

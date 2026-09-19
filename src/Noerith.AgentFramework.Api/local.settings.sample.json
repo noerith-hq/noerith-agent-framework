@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AZURE_OPENAI_ENDPOINT": "https://YOUR-RESOURCE.openai.azure.com/openai/v1/",
+    "AZURE_OPENAI_DEPLOYMENT_NAME": "YOUR_DEPLOYMENT",
+    "NOERITH_AGENT_CREDENTIAL": "default"
+  }
+}
