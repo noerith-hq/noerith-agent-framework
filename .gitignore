@@ -1,0 +1,27 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+
+# Logs and temporary output
+*.log
+tmp/
+temp/
+coverage/
+
+# Common language and tooling output
+node_modules/
+dist/
+build/
+bin/
+obj/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/

@@ -1,0 +1,3 @@
+NOERITH starter template sentinel.
+
+Run scripts/initialize.sh before the first delivery. The initializer removes this file after replacing the required project placeholders.

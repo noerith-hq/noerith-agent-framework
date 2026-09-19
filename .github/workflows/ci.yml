@@ -1,0 +1,15 @@
+name: NOERITH CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: noerith-hq/.github/.github/workflows/secure-ci.yml@fb0f1e4e8946380d2ef121de0bbb004b2786de15
+    permissions:
+      contents: read
