@@ -28,8 +28,6 @@ required_files=(
   .gitattributes
   .gitignore
   .github/dependabot.yml
-  .github/workflows/ci.yml
-  .github/workflows/codeql.yml
   .github/workflows/release.yml
   ci/verify.sh
   docs/architecture.md
@@ -62,20 +60,12 @@ for heading in \
   require_contains "${heading}" README.md
 done
 
-require_contains 'pull_request:' .github/workflows/ci.yml
-require_contains 'push:' .github/workflows/ci.yml
-require_contains 'noerith-hq/.github/.github/workflows/secure-ci.yml@fb0f1e4e8946380d2ef121de0bbb004b2786de15' .github/workflows/ci.yml
-require_contains 'contents: read' .github/workflows/ci.yml
 require_contains 'workflow_dispatch:' .github/workflows/release.yml
 require_contains 'contents: write' .github/workflows/release.yml
 require_contains "github.ref == 'refs/heads/main'" .github/workflows/release.yml
 require_contains 'SEMVER_PATTERN=' .github/workflows/release.yml
 require_contains 'GH_TOKEN: ${{ github.token }}' .github/workflows/release.yml
 require_contains '--repo "${GITHUB_REPOSITORY}"' .github/workflows/release.yml
-
-if grep -Eq '^[[:space:]]*[A-Za-z0-9_-]+:[[:space:]]*write([[:space:]#]|$)' .github/workflows/ci.yml; then
-  fail 'CI must not request write permissions'
-fi
 
 workflow_roots=(.github/workflows)
 if [[ -d .github/actions ]]; then

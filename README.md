@@ -49,10 +49,12 @@ cd src/Noerith.AgentFramework.Api
 func start
 ```
 
-No test, build, or CI job contacts Azure. The runtime creates a Microsoft Agent Framework agent only
+Local tests and builds do not contact Azure. The runtime creates a Microsoft Agent Framework agent only
 when an authenticated caller invokes the turn endpoint with valid provider configuration.
 
 ## Testing
+
+Automatic CI is not configured, following the organization policy, until the user explicitly requests it. Run the local checks below and include results in pull requests. Manual releases remain separate.
 
 Run the complete local verification contract:
 
