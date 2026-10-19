@@ -14,8 +14,8 @@
 
 - Keep credentials outside Git history.
 - Use GitHub environment secrets only when a deployment requires them.
-- Keep CI permissions read-only unless a specific job needs a narrow write permission.
-- Require pull requests, successful CI, and resolved conversations on `main`; block branch deletion and force-pushes.
+- Do not configure automatic CI until the user explicitly requests it; keep local verification and security checks. Manual release jobs retain narrowly scoped permissions.
+- Require pull requests, relevant local verification evidence, and resolved conversations on `main`; block branch deletion and force-pushes.
 - Review major dependency updates manually.
 - Report vulnerabilities through the organization security policy.
 - Verify Dependabot alerts and security updates after creating a private repository. They are supported on the current Free plan, but repository settings are not copied by a template.
