@@ -56,8 +56,8 @@ the provider-neutral contracts; the provider adapter implements them at the edge
   `NOERITH_AGENT_CREDENTIAL=managed-identity` and use least-privilege managed identity access.
 - The Function-level key is not user authorization. Add an application identity and permission policy
   before a public or multi-user deployment.
-- CI restores, formats, builds, tests, and scans C# with CodeQL. CI has read-only contents permission;
-  only CodeQL receives `security-events: write`.
+- Local verification restores, formats, builds, and tests C#. Automatic CI and CodeQL workflows are
+  not configured until the user explicitly requests them; local security checks and manual review remain.
 - No Azure resource, Foundry project, model deployment, or production telemetry is provisioned by this
   repository.
 
