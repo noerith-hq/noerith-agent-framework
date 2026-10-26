@@ -99,3 +99,14 @@ Follow the NOERITH [contribution guide](https://github.com/noerith-hq/.github/bl
 ## License
 
 This starter is licensed under the [Apache License 2.0](LICENSE). Confirm the appropriate license before applying it to a product repository.
+
+---
+
+<a href="https://github.com/noerith-hq">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/noerith-logo-horizontal-on-dark.svg">
+    <img alt="NOERITH" src="docs/assets/brand/noerith-logo-horizontal-on-light.svg" width="200">
+  </picture>
+</a>
+
+Part of [NOERITH](https://github.com/noerith-hq), an independent lab building open-source data systems and applied AI.
