@@ -9,6 +9,7 @@
 5. Run `./ci/verify.sh` locally and open a pull request.
 6. Add the project ecosystem to `.github/dependabot.yml` once a package manager is selected.
 7. Configure a `main` branch ruleset for public repositories; template generation does not copy repository rulesets or merge settings.
+8. Set the repository social preview to `docs/assets/brand/noerith-social-preview-1280x640.png` under Settings → General; template generation does not copy it either. Brand files and their use are described in `docs/assets/brand/README.md`.
 
 ## Security baseline
 
